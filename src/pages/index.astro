@@ -12,13 +12,15 @@ import { monitored, verified, manualCost, ourCost } from '../data/series';
         <span class="logo" role="img" aria-label="Carbon Valinor" style={`--logo: url(${asset('logo.svg')})`}></span>
         <p data-words>
           <span class="lead" role="heading" aria-level="1">Carbon Valinor builds software for carbon.</span>{' '}
-          Every CO₂ storage project generates data from dozens of systems, and most of
-          it still ends up in spreadsheets. We pull it into one record and use AI to
-          analyse it, so operators know what happened to each tonne.
+          We build the operating system for carbon management: the software a company
+          uses to run its CO₂ chain end to end, from capture plant and compression to
+          pipeline, injection well and reservoir. It connects to the machines and
+          sensors in the field, runs physical and machine-learning models on what they
+          measure, and controls, forecasts and records each stage as one system.
         </p>
         <p data-words>
-          We want permanent storage to be cheap to prove. Once it is, storing carbon
-          stops being a last resort and becomes the default.
+          We want permanent storage to be cheap to run and cheap to prove. Once it is,
+          storing carbon stops being a last resort and becomes the default.
         </p>
       </div>
     </section>
@@ -26,13 +28,14 @@ import { monitored, verified, manualCost, ourCost } from '../data/series';
     <section class="col" id="monitoring">
       <p data-words>
         <span class="lead">Every tonne, accounted for.</span>{' '}
-        Our models read wellhead and downhole pressure, fibre-optic sensing,
-        time-lapse seismic, satellite data on surface movement and soil-gas
-        measurements. They learn how each site normally behaves and monitor it around
-        the clock, across <span class="counter" data-keep>1,243,118</span> tonnes so
-        far. If pressure drifts, the plume moves somewhere unexpected or two meters
-        disagree, the operator gets an alert with the likely cause. We reconcile the
-        mass balance from capture to injection and store each reading with a
+        Our models work on wellhead and downhole pressure, distributed fibre-optic
+        sensing, time-lapse seismic, satellite radar of surface deformation and
+        soil-gas flux. Reservoir simulations are matched to field history as the data
+        arrives, and anomaly-detection models learn how each site normally behaves.
+        Together they track <span class="counter" data-keep>1,243,118</span> tonnes so
+        far. When pressure drifts, a plume leaves its predicted footprint or two meters
+        disagree, the system localises the cause and alerts the operator. Mass is
+        reconciled from capture to injection, and every reading is kept with a
         timestamp, in formats regulators and registries accept.
       </p>
       <Chart
@@ -47,9 +50,10 @@ import { monitored, verified, manualCost, ourCost } from '../data/series';
     <section class="col" id="cost">
       <p data-words>
         <span class="lead">Cheaper every year.</span>{' '}
-        Monitoring, reporting and verification add real cost to every stored tonne.
-        We automate most of that work, so the cost per tonne goes down each year and
-        the evidence stays just as strong.
+        Monitoring, reporting and verification add real cost to every stored tonne,
+        and most of it is still manual work. We automate the measurement, the
+        modelling and the reconciliation, so the cost per tonne falls each year and
+        the evidence holds to the same standard.
       </p>
       <Chart
         id="cost"
@@ -63,8 +67,8 @@ import { monitored, verified, manualCost, ourCost } from '../data/series';
     <section class="col" id="contact">
       <p data-words>
         <span class="lead">Work with us.</span>{' '}
-        We work with companies that capture, transport, store or account for CO₂.
-        If that’s you, write to us.
+        We work with operators across the CO₂ chain: capture, transport, storage and
+        accounting. If you run any part of it, write to us.
       </p>
       <p class="closing" data-words>
         <a class="mail" href="mailto:info@carbonvalinor.com">info@carbonvalinor.com</a>
