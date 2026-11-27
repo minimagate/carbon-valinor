@@ -1,43 +1,42 @@
-# Astro Starter Kit: Minimal
+# Carbon Valinor
+
+Single-page site for Carbon Valinor, built with [Astro](https://astro.build).
+Live at **https://minimagate.github.io/carbon-valinor/**.
+
+## Develop
+
+Requires Node 22.23.4 or newer (`.nvmrc` pins 26).
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev       # http://localhost:4321/carbon-valinor/
+npm run build     # static output in dist/
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+src/
+  pages/index.astro       page copy and charts
+  pages/404.astro         not-found page
+  layouts/Base.astro      <head>: meta, icons, social preview; loads styles and reveal script
+  components/Chart.astro  two-series line chart rendered to static SVG
+  data/series.ts          chart data (illustrative, replace with real figures)
+  scripts/reveal.ts       word-by-word reveal, chart-in-view trigger, live tonnes counter
+  styles/global.css       type, colours, layout, motion
+  lib/paths.ts            asset paths under the Pages base
+public/
+  logo.svg                logo, built on a single circle
+  favicon.svg / .ico, apple-touch-icon.png, icon-*.png, site.webmanifest, og.png
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Deploy
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Every push to `main` builds and deploys to GitHub Pages via `.github/workflows/deploy.yml`.
+The site is served under `/carbon-valinor`; `site` and `base` are set in `astro.config.mjs`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Placeholders
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Chart data, the counter's starting figure and rate (`src/scripts/reveal.ts`) and the
+contact address are illustrative.

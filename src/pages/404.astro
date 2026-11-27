@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { asset } from '../lib/paths';
+---
+
+<Base title="Not found · Carbon Valinor">
+  <main>
+    <section class="hero">
+      <div class="col">
+        <span class="logo" role="img" aria-label="Carbon Valinor" style={`--logo: url(${asset('logo.svg')})`}></span>
+        <p data-words>
+          <span class="lead" role="heading" aria-level="1">This page doesn’t exist.</span>{' '}
+          <a class="mail" href={asset('')}>Back to Carbon Valinor</a>
+        </p>
+      </div>
+    </section>
+  </main>
+</Base>
