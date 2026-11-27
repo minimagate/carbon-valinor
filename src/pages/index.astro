@@ -38,30 +38,29 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
           <span class="logo" role="img" aria-label="Carbon Valinor" style={`--logo: url(${`${import.meta.env.BASE_URL}/logo.svg`.replace('//', '/')})`}></span>
           <p data-words>
             <span class="lead" role="heading" aria-level="1">Carbon Valinor builds software for carbon.</span>{' '}
-            Capturing, moving, storing and measuring CO₂ still runs on spreadsheets,
-            scattered sensor feeds and reports that take months. We bring it into one
-            place and use AI to read the data, so your team doesn’t have to.
+            Capture, transport, storage and measurement each produce their own data, in
+            their own formats, on their own schedules. We bring them into a single,
+            continuous record and use AI to interpret it, so that what happens to every
+            tonne is known rather than estimated.
           </p>
           <p data-words>
-            Our goal is to make every tonne of carbon simple to track and easy to
-            trust, so removing it becomes the obvious choice, not a costly last resort.
-          </p>
+            Our goal          </p>
         </div>
       </section>
 
       <section class="col" id="monitoring">
         <p data-words>
           <span class="lead">Every tonne, accounted for.</span>{' '}
-          Carbon Valinor ingests every signal a storage project produces: wellhead and
-          downhole pressure and temperature, flow meters, distributed fibre-optic
-          sensing, seismic surveys, satellite ground deformation and soil-gas probes at
-          the surface. We use AI to learn each site’s baseline and watch every stream
-          continuously, across <span class="counter" data-keep>1,243,118</span> tonnes
-          and counting. When pressure drifts, a plume moves off model or a meter
-          disagrees with its neighbours, it flags the anomaly and traces it to a source
-          within minutes, not quarters. Every tonne is reconciled from capture to
-          injection, and every reading becomes a timestamped, audit-ready record that
-          maps to the reporting frameworks regulators and registries already use.
+          Our models ingest every signal a storage project produces, from wellhead and
+          downhole pressure to distributed fibre-optic sensing, time-lapse seismic,
+          satellite measurements of surface deformation and soil-gas flux. They learn
+          the baseline of each site and hold it under continuous watch, across
+          <span class="counter" data-keep>1,243,118</span> tonnes and counting. A drift
+          in pressure, a plume departing from its model, a meter at odds with its
+          neighbours: each is flagged as it emerges and traced to its source. Mass is
+          reconciled from capture point to injection well, and every reading is kept as
+          a timestamped record, structured for the frameworks regulators and registries
+          already use.
         </p>
         <Chart
           id="stored"
@@ -75,9 +74,9 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
       <section class="col" id="cost">
         <p data-words>
           <span class="lead">Cheaper every year.</span>{' '}
-          Monitoring, reporting and verification are a hidden cost of every tonne.
-          Our software does that work for you, so the cost of proving each tonne keeps
-          falling while the standard of proof stays the same.
+          Monitoring, reporting and verification are a quiet but substantial share of
+          what storage costs. By automating measurement and reconciliation, we lower the
+          cost of proving a tonne year after year, without lowering the standard of proof.
         </p>
         <Chart
           id="cost"
@@ -91,8 +90,9 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
       <section class="col" id="contact">
         <p data-words>
           <span class="lead">Work with us.</span>{' '}
-          If your company captures, transports, stores or accounts for CO₂, Carbon
-          Valinor gives your team a clear view of every tonne.
+          We work with operators across the chain of custody, from capture and transport
+          to storage and accounting. If you are responsible for a tonne of CO₂, we would
+          like to help you account for it.
         </p>
         <p class="closing" data-words>
           <a class="mail" href="mailto:info@carbonvalinor.com">info@carbonvalinor.com</a>
