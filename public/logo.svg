@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 110">
+  <!-- Built on one circle (r 55, centre 55,55), one stroke width for every segment: spokes at 180°, 225°, 270° run rim to centre,
+       the stem continues to half radius, and the 135° spoke turns into the arc that closes at 0°. -->
+  <path d="M0.39,55.00 L55,55 M16.38,16.38 L55,55 M55.00,0.39 L55.00,82.50 M55,55 L20.71,89.29 A48.5,48.5 0 0 0 103.50,55.00" fill="none" stroke="#1e1e1e" stroke-width="13" stroke-linejoin="miter" />
+</svg>
