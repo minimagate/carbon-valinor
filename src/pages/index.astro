@@ -159,7 +159,7 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
       // Tonnes under watch: grows steadily from a fixed point in time, so every visitor sees the same figure.
       const counter = document.querySelector<HTMLElement>('.counter');
       if (counter) {
-        const BASE = 1_224_600, FROM = Date.UTC(2026, 10, 1), PER_TONNE_MS = 1400;
+        const BASE = 1_181_404, FROM = Date.UTC(2026, 10, 27), PER_TONNE_MS = 1400;
         const fmt = new Intl.NumberFormat('en-US');
         const tick = () => (counter.textContent = fmt.format(BASE + Math.floor((Date.now() - FROM) / PER_TONNE_MS)));
         tick();
