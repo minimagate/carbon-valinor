@@ -1,6 +1,11 @@
 ---
 import Chart from '../components/Chart.astro';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const asset = (path: string) => `${base}/${path}`;
+const pageUrl = new URL(`${base}/`, Astro.site).href;
+const description = 'Carbon Valinor builds software for carbon: one record for capture, transport, storage and measurement, analysed with AI.';
+
 // Illustrative series, generated deterministically so builds are stable.
 let seed = 7;
 const rand = () => ((seed = (seed * 16807) % 2147483647) / 2147483647) - 0.5;
@@ -24,9 +29,26 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/logo.svg`.replace('//', '/')} />
+    <link rel="icon" href={asset('favicon.ico')} sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href={asset('favicon.svg')} />
+    <link rel="apple-touch-icon" href={asset('apple-touch-icon.png')} />
+    <link rel="manifest" href={asset('site.webmanifest')} />
+    <meta name="theme-color" content="#fafafa" />
+    <link rel="canonical" href={pageUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Carbon Valinor" />
+    <meta property="og:title" content="Carbon Valinor" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={new URL(asset('og.png'), Astro.site).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Carbon Valinor" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(asset('og.png'), Astro.site).href} />
     <title>Carbon Valinor</title>
-    <meta name="description" content="Carbon Valinor builds software for carbon, using AI to monitor, store and verify CO₂." />
+    <meta name="description" content={description} />
     <script is:inline>document.documentElement.classList.add('anim');</script>
   </head>
   <body>
@@ -35,17 +57,16 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
     <main>
       <section class="hero" id="platform">
         <div class="col">
-          <span class="logo" role="img" aria-label="Carbon Valinor" style={`--logo: url(${`${import.meta.env.BASE_URL}/logo.svg`.replace('//', '/')})`}></span>
+          <span class="logo" role="img" aria-label="Carbon Valinor" style={`--logo: url(${asset('logo.svg')})`}></span>
           <p data-words>
             <span class="lead" role="heading" aria-level="1">Carbon Valinor builds software for carbon.</span>{' '}
-            Capture, transport, storage and measurement each produce their own data, in
-            their own formats, on their own schedules. We bring them into a single,
-            continuous record and use AI to interpret it, so that what happens to every
-            tonne is known rather than estimated.
+            Every CO₂ storage project generates data from dozens of systems, and most of
+            it still ends up in spreadsheets. We pull it into one record and use AI to
+            analyse it, so operators know what happened to each tonne.
           </p>
           <p data-words>
-            The aim is simple: to make permanent storage so legible, and so inexpensive
-            to prove, that it becomes the obvious choice rather than a costly last resort.
+            We want permanent storage to be cheap to prove. Once it is, storing carbon
+            stops being a last resort and becomes the default.
           </p>
         </div>
       </section>
@@ -53,16 +74,14 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
       <section class="col" id="monitoring">
         <p data-words>
           <span class="lead">Every tonne, accounted for.</span>{' '}
-          Our models ingest every signal a storage project produces, from wellhead and
-          downhole pressure to distributed fibre-optic sensing, time-lapse seismic,
-          satellite measurements of surface deformation and soil-gas flux. They learn
-          the baseline of each site and hold it under continuous watch, across
-          <span class="counter" data-keep>1,243,118</span> tonnes and counting. A drift
-          in pressure, a plume departing from its model, a meter at odds with its
-          neighbours: each is flagged as it emerges and traced to its source. Mass is
-          reconciled from capture point to injection well, and every reading is kept as
-          a timestamped record, structured for the frameworks regulators and registries
-          already use.
+          Our models read wellhead and downhole pressure, fibre-optic sensing,
+          time-lapse seismic, satellite data on surface movement and soil-gas
+          measurements. They learn how each site normally behaves and monitor it around
+          the clock, across <span class="counter" data-keep>1,243,118</span> tonnes so
+          far. If pressure drifts, the plume moves somewhere unexpected or two meters
+          disagree, the operator gets an alert with the likely cause. We reconcile the
+          mass balance from capture to injection and store each reading with a
+          timestamp, in formats regulators and registries accept.
         </p>
         <Chart
           id="stored"
@@ -76,9 +95,9 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
       <section class="col" id="cost">
         <p data-words>
           <span class="lead">Cheaper every year.</span>{' '}
-          Monitoring, reporting and verification are a quiet but substantial share of
-          what storage costs. By automating measurement and reconciliation, we lower the
-          cost of proving a tonne year after year, without lowering the standard of proof.
+          Monitoring, reporting and verification add real cost to every stored tonne.
+          We automate most of that work, so the cost per tonne goes down each year and
+          the evidence stays just as strong.
         </p>
         <Chart
           id="cost"
@@ -92,9 +111,8 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
       <section class="col" id="contact">
         <p data-words>
           <span class="lead">Work with us.</span>{' '}
-          We work with operators across the chain of custody, from capture and transport
-          to storage and accounting. If you are responsible for a tonne of CO₂, we would
-          like to help you account for it.
+          We work with companies that capture, transport, store or account for CO₂.
+          If that’s you, write to us.
         </p>
         <p class="closing" data-words>
           <a class="mail" href="mailto:info@carbonvalinor.com">info@carbonvalinor.com</a>
@@ -209,7 +227,7 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
       }
 
       .col { width: min(520px, 100vw - 3rem); margin: 0 auto; }
-      .hero { padding: 24vh 0 4.5rem; }
+      .hero { padding: 24vh 0 0; }
             main > section:not(.hero) { padding: 1.4em 0 0; font-size: 1.3125rem; }
       main > section:last-child { padding-bottom: 18vh; }
 
