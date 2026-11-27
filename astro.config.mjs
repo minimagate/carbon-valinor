@@ -1,5 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+// Served from GitHub Pages at /carbon-valinor/
+export default defineConfig({
+  site: 'https://minimagate.github.io',
+  base: '/carbon-valinor',
+});

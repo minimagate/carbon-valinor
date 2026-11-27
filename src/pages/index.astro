@@ -24,7 +24,7 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/logo.svg`.replace('//', '/')} />
     <title>Carbon Valinor</title>
     <meta name="description" content="Carbon Valinor builds software for carbon, using AI to monitor, store and verify CO₂." />
     <script is:inline>document.documentElement.classList.add('anim');</script>
@@ -35,7 +35,7 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
     <main>
       <section class="hero" id="platform">
         <div class="col">
-          <span class="logo" role="img" aria-label="Carbon Valinor"></span>
+          <span class="logo" role="img" aria-label="Carbon Valinor" style={`--logo: url(${`${import.meta.env.BASE_URL}/logo.svg`.replace('//', '/')})`}></span>
           <p data-words>
             <span class="lead" role="heading" aria-level="1">Carbon Valinor builds software for carbon.</span>{' '}
             Capturing, moving, storing and measuring CO₂ still runs on spreadsheets,
@@ -205,7 +205,7 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
             main > section:not(.hero) { padding: 1.4em 0 0; font-size: 1.3125rem; }
       main > section:last-child { padding-bottom: 18vh; }
 
-      .logo { display: block; width: 30px; aspect-ratio: 111 / 110; margin-bottom: 2.25rem; background: #1e1e1e; -webkit-mask: url(/logo.svg) center / contain no-repeat; mask: url(/logo.svg) center / contain no-repeat; }
+      .logo { display: block; width: 30px; aspect-ratio: 111 / 110; margin-bottom: 2.25rem; background: #1e1e1e; -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat; }
 
       p {
         font-size: 1.3125rem;
