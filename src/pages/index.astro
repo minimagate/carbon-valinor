@@ -52,10 +52,16 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
       <section class="col" id="monitoring">
         <p data-words>
           <span class="lead">Every tonne, accounted for.</span>{' '}
-          Connect your sensors, meters and site data, and we use AI to watch every
-          stream continuously, across <span class="counter" data-keep>1,243,118</span> tonnes
-          and counting. It flags what looks wrong before it becomes a problem,
-          and turns readings into verified, audit-ready records on its own.
+          Carbon Valinor ingests every signal a storage project produces: wellhead and
+          downhole pressure and temperature, flow meters, distributed fibre-optic
+          sensing, seismic surveys, satellite ground deformation and soil-gas probes at
+          the surface. We use AI to learn each site’s baseline and watch every stream
+          continuously, across <span class="counter" data-keep>1,243,118</span> tonnes
+          and counting. When pressure drifts, a plume moves off model or a meter
+          disagrees with its neighbours, it flags the anomaly and traces it to a source
+          within minutes, not quarters. Every tonne is reconciled from capture to
+          injection, and every reading becomes a timestamped, audit-ready record that
+          maps to the reporting frameworks regulators and registries already use.
         </p>
         <Chart
           id="stored"
@@ -153,7 +159,7 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
       // Tonnes under watch: grows steadily from a fixed point in time, so every visitor sees the same figure.
       const counter = document.querySelector<HTMLElement>('.counter');
       if (counter) {
-        const BASE = 1_243_118, FROM = Date.UTC(2026, 10, 28), PER_TONNE_MS = 1400;
+        const BASE = 1_224_600, FROM = Date.UTC(2026, 10, 1), PER_TONNE_MS = 1400;
         const fmt = new Intl.NumberFormat('en-US');
         const tick = () => (counter.textContent = fmt.format(BASE + Math.floor((Date.now() - FROM) / PER_TONNE_MS)));
         tick();
@@ -201,7 +207,7 @@ const ours = series(28, (t) => 22 - 17.8 * Math.pow(t, 0.8), 0.4);
       }
 
       .col { width: min(520px, 100vw - 3rem); margin: 0 auto; }
-      .hero { padding: 24vh 0 6.5rem; }
+      .hero { padding: 24vh 0 4.5rem; }
             main > section:not(.hero) { padding: 1.4em 0 0; font-size: 1.3125rem; }
       main > section:last-child { padding-bottom: 18vh; }
 
