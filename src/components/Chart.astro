@@ -95,9 +95,9 @@ const endB = pts(b.data)[n - 1];
   :global(.anim) .chart { opacity: 0; filter: blur(8px); }
   :global(.anim) .plot { clip-path: inset(0 100% 0 0); }
   :global(.anim) .dot { opacity: 0; }
-  :global(.anim) .chart:global(.seen) { animation: wordIn 0.6s ease-out both; }
-  :global(.anim) .chart:global(.seen) .plot { clip-path: inset(0 0 0 0); transition: clip-path 1.4s var(--ease) 0.3s; }
-  :global(.anim) .chart:global(.seen) .dot { opacity: 1; transition: opacity 0.6s ease-out 1.4s; }
+  :global(.anim) .chart:global(.seen) { animation: wordIn 1.2s cubic-bezier(0.33, 0, 0.2, 1) both; }
+  :global(.anim) .chart:global(.seen) .plot { clip-path: inset(0 0 0 0); transition: clip-path 2.8s cubic-bezier(0.45, 0, 0.2, 1) 0.4s; }
+  :global(.anim) .chart:global(.seen) .dot { opacity: 1; transition: opacity 1s ease 2.7s; }
 
   @media (prefers-reduced-motion: reduce) {
     :global(.anim) .chart, :global(.anim .in) .chart { opacity: 1; filter: none; animation: none; }
