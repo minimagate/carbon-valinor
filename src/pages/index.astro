@@ -1,78 +1,105 @@
 ---
-import Base from '../layouts/Base.astro';
-import Chart from '../components/Chart.astro';
-import { asset } from '../lib/paths';
-import { monitored, verified, manualCost, ourCost } from '../data/series';
+import Base from "../layouts/Base.astro";
+import Chart from "../components/Chart.astro";
+import { asset } from "../lib/paths";
+import { monitored, verified, manualCost, ourCost } from "../data/series";
 ---
 
 <Base>
-  <main>
-    <section class="hero" id="platform">
-      <div class="col">
-        <span class="logo" role="img" aria-label="Carbon Valinor" style={`--logo: url(${asset('logo.svg')})`}></span>
-        <p data-words>
-          <span class="lead" role="heading" aria-level="1">Carbon Valinor builds software for carbon.</span>{' '}
-          Companies that capture and store CO₂ run long chains of equipment: capture
-          units, compressors, pipelines, injection wells, and the rock underground. Our
-          software connects to that equipment, models how each part behaves, and
-          helps operators run the whole chain from one place.
-        </p>
-        <p data-words>
-          We want storing carbon to be cheap to run and cheap to prove. Once it is,
-          more of it will get done.
-        </p>
-      </div>
-    </section>
+    <main>
+        <section class="hero" id="platform">
+            <div class="col">
+                <span
+                    class="logo"
+                    role="img"
+                    aria-label="Carbon Valinor"
+                    style={`--logo: url(${asset("logo.svg")})`}
+                ></span>
+                <p data-words>
+                    <span class="lead" role="heading" aria-level="1">
+                        Carbon Valinor builds intelligence for carbon removal.
+                    </span>{" "}
+                    We develop software that uses machine-learning models to
+                    capture, move and store carbon dioxide more efficiently, and
+                    to prove with measurable certainty that it stays out of the
+                    atmosphere for good.
+                </p>
+                <p data-words>
+                    Removing carbon at the scale the climate demands is a
+                    problem of physics, engineering and trust. We treat it as a
+                    problem of information.
+                </p>
+            </div>
+        </section>
 
-    <section class="col" id="monitoring">
-      <p data-words>
-        <span class="lead">Every tonne, accounted for.</span>{' '}
-        We take in pressure readings from the wellhead and the bottom of the well,
-        fibre-optic sensing along the wellbore, repeat seismic surveys, satellite
-        measurements of ground movement and soil-gas samples. Reservoir simulations
-        are updated as new data comes in, and statistical models learn what is normal
-        for each site. Together they cover <span class="counter" data-keep>1,243,118</span>{' '}
-        tonnes so far. When pressure drifts, the CO₂ spreads further than predicted or
-        two meters disagree, the operator is told what changed and where. Every tonne
-        is tracked from capture to injection, and every reading is stored with a
-        timestamp in the formats regulators ask for.
-      </p>
-      <Chart
-        id="stored"
-        series={[
-          { label: 'CO₂ monitored', value: '1.24 Mt', data: monitored },
-          { label: 'Verified', value: '1.17 Mt', data: verified },
-        ]}
-      />
-    </section>
+        <section class="col" id="monitoring">
+            <p data-words>
+                <span class="lead">Models that see underground.</span> Our
+                models learn from every signal a storage site produces:
+                pressure, temperature, seismic, fibre-optic and satellite data.
+                They pair physical simulation with machine learning to forecast
+                how carbon moves through rock, so operators know where it is,
+                where it is going, and the moment anything departs from
+                expectation. Across the sites we model,{" "}
+                <span class="counter" data-keep>
+                    1,243,118
+                </span>{" "}
+                tonnes are under continuous watch.
+            </p>
+            <Chart
+                id="stored"
+                series={[
+                    {
+                        label: "CO₂ monitored",
+                        value: "1.24 Mt",
+                        data: monitored,
+                    },
+                    { label: "Verified", value: "1.17 Mt", data: verified },
+                ]}
+            />
+        </section>
 
-    <section class="col" id="cost">
-      <p data-words>
-        <span class="lead">Cheaper every year.</span>{' '}
-        Proving that CO₂ stays underground costs money, and most of that cost is
-        still people doing the work by hand. We automate the measurement, modelling
-        and bookkeeping, so the cost per tonne drops every year without lowering the
-        standard of proof.
-      </p>
-      <Chart
-        id="cost"
-        series={[
-          { label: 'Manual, per tonne', value: '$18.40', data: manualCost },
-          { label: 'With Carbon Valinor', value: '$4.20', data: ourCost },
-        ]}
-      />
-    </section>
+        <section class="col" id="cost">
+            <p data-words>
+                <span class="lead">Compunded efficiency.</span> Every stage of
+                the carbon chain, from capture to compression, transport and
+                injection, loses energy to conditions no one optimises in real
+                time. Our software tunes each stage against the whole and
+                automates the measurement and verification still done by hand.
+                The cost of a permanently stored tonne falls; the standard of
+                proof rises.
+            </p>
+            <Chart
+                id="cost"
+                series={[
+                    {
+                        label: "Manual, per tonne",
+                        value: "$18.40",
+                        data: manualCost,
+                    },
+                    {
+                        label: "With Carbon Valinor",
+                        value: "$4.20",
+                        data: ourCost,
+                    },
+                ]}
+            />
+        </section>
 
-    <section class="col" id="contact">
-      <p data-words>
-        <span class="lead">Work with us.</span>{' '}
-        We work with operators across the CO₂ chain: capture, transport, storage and
-        accounting. If you run any part of it, write to us.
-      </p>
-      <p class="closing" data-words>
-        <a class="mail" href="mailto:info@carbonvalinor.com">info@carbonvalinor.com</a>
-      </p>
-      <footer><span data-words>© 2026 Carbon Valinor</span></footer>
-    </section>
-  </main>
+        <section class="col" id="contact">
+            <p data-words>
+                <span class="lead">Work with us.</span> We partner with the
+                companies that capture, transport and store carbon, and with
+                those who must account for it. If that is you, write to us.
+            </p>
+            <p class="closing" data-words>
+                <a class="mail" href="mailto:info@carbonvalinor.com">
+                    info@carbonvalinor.com
+                </a>
+            </p>
+            <footer>
+                <span data-words>© 2026 Carbon Valinor</span>
+            </footer>
+        </section>
+    </main>
 </Base>
