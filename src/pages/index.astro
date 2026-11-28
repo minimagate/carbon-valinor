@@ -12,15 +12,14 @@ import { monitored, verified, manualCost, ourCost } from '../data/series';
         <span class="logo" role="img" aria-label="Carbon Valinor" style={`--logo: url(${asset('logo.svg')})`}></span>
         <p data-words>
           <span class="lead" role="heading" aria-level="1">Carbon Valinor builds software for carbon.</span>{' '}
-          We build the operating system for carbon management: the software a company
-          uses to run its CO₂ chain end to end, from capture plant and compression to
-          pipeline, injection well and reservoir. It connects to the machines and
-          sensors in the field, runs physical and machine-learning models on what they
-          measure, and controls, forecasts and records each stage as one system.
+          Companies that capture and store CO₂ run long chains of equipment: capture
+          units, compressors, pipelines, injection wells, and the rock underground. Our
+          software connects to that equipment, models how each part behaves, and
+          helps operators run the whole chain from one place.
         </p>
         <p data-words>
-          We want permanent storage to be cheap to run and cheap to prove. Once it is,
-          storing carbon stops being a last resort and becomes the default.
+          We want storing carbon to be cheap to run and cheap to prove. Once it is,
+          more of it will get done.
         </p>
       </div>
     </section>
@@ -28,15 +27,15 @@ import { monitored, verified, manualCost, ourCost } from '../data/series';
     <section class="col" id="monitoring">
       <p data-words>
         <span class="lead">Every tonne, accounted for.</span>{' '}
-        Our models work on wellhead and downhole pressure, distributed fibre-optic
-        sensing, time-lapse seismic, satellite radar of surface deformation and
-        soil-gas flux. Reservoir simulations are matched to field history as the data
-        arrives, and anomaly-detection models learn how each site normally behaves.
-        Together they track <span class="counter" data-keep>1,243,118</span> tonnes so
-        far. When pressure drifts, a plume leaves its predicted footprint or two meters
-        disagree, the system localises the cause and alerts the operator. Mass is
-        reconciled from capture to injection, and every reading is kept with a
-        timestamp, in formats regulators and registries accept.
+        We take in pressure readings from the wellhead and the bottom of the well,
+        fibre-optic sensing along the wellbore, repeat seismic surveys, satellite
+        measurements of ground movement and soil-gas samples. Reservoir simulations
+        are updated as new data comes in, and statistical models learn what is normal
+        for each site. Together they cover <span class="counter" data-keep>1,243,118</span>
+        tonnes so far. When pressure drifts, the CO₂ spreads further than predicted or
+        two meters disagree, the operator is told what changed and where. Every tonne
+        is tracked from capture to injection, and every reading is stored with a
+        timestamp in the formats regulators ask for.
       </p>
       <Chart
         id="stored"
@@ -50,10 +49,10 @@ import { monitored, verified, manualCost, ourCost } from '../data/series';
     <section class="col" id="cost">
       <p data-words>
         <span class="lead">Cheaper every year.</span>{' '}
-        Monitoring, reporting and verification add real cost to every stored tonne,
-        and most of it is still manual work. We automate the measurement, the
-        modelling and the reconciliation, so the cost per tonne falls each year and
-        the evidence holds to the same standard.
+        Proving that CO₂ stays underground costs money, and most of that cost is
+        still people doing the work by hand. We automate the measurement, modelling
+        and bookkeeping, so the cost per tonne drops every year without lowering the
+        standard of proof.
       </p>
       <Chart
         id="cost"
